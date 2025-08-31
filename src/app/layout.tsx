@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./animations.css";
@@ -100,6 +101,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-background font-sans antialiased text-foreground">
         <Providers>
+          <Script src="https://buttons.github.io/buttons.js" strategy="afterInteractive" />
           {children}
         </Providers>
       </body>

@@ -151,9 +151,28 @@ export default function Home() {
               className="flex items-center space-x-4"
             >
               <ThemeToggle />
-              <Button className="bg-blue-600 hover:bg-blue-700">
-                Coming Soon
-              </Button>
+              <div className="flex items-center gap-2">
+                <a
+                  className="github-button"
+                  href="https://github.com/MagicBeansAI/magictunnel"
+                  data-color-scheme="light"
+                  data-size="large"
+                  aria-label="Visit MagicBeansAI/magictunnel on GitHub"
+                >
+                  GitHub
+                </a>
+                <a
+                  className="github-button"
+                  href="https://github.com/MagicBeansAI/magictunnel"
+                  data-icon="octicon-star"
+                  data-show-count="true"
+                  data-color-scheme="light"
+                  data-size="large"
+                  aria-label="Star MagicBeansAI/magictunnel on GitHub"
+                >
+                  Star
+                </a>
+              </div>
             </motion.div>
           </div>
         </motion.nav>
@@ -440,7 +459,7 @@ export default function Home() {
                   <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br text-2xl ${feature.color} text-white`}>
                     {feature.icon}
                   </div>
-                  <h3 className="mb-2 text-xl font-bold">{feature.title}</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">{feature.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
                 </div>
               </motion.div>
@@ -770,9 +789,28 @@ routing:
               transition={{ delay: 0.3 }}
               className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
             >
-              <Button size="lg" className="bg-blue-600 px-8 py-6 text-lg hover:bg-blue-700">
-                Coming soon
-              </Button>
+              <div className="flex items-center gap-3">
+                <a
+                  className="github-button"
+                  href="https://github.com/MagicBeansAI/magictunnel"
+                  data-color-scheme="light"
+                  data-size="large"
+                  aria-label="Visit MagicBeansAI/magictunnel on GitHub"
+                >
+                  View on GitHub
+                </a>
+                <a
+                  className="github-button"
+                  href="https://github.com/MagicBeansAI/magictunnel"
+                  data-icon="octicon-star"
+                  data-show-count="true"
+                  data-color-scheme="light"
+                  data-size="large"
+                  aria-label="Star MagicBeansAI/magictunnel on GitHub"
+                >
+                  Star
+                </a>
+              </div>
               {/*<Button variant="outline" size="lg" className="px-8 py-6 text-lg">
                 Contact Sales
               </Button>*/}
