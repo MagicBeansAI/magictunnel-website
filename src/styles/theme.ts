@@ -153,7 +153,7 @@ export const darkTheme: Theme = {
 
 // Extend the default theme type
 declare module 'styled-components' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   export interface DefaultTheme extends Theme {}
 }
 

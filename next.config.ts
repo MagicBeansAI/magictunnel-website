@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import path from "path";
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const nextConfig: NextConfig = {
   reactStrictMode: false,
@@ -30,17 +31,14 @@ const nextConfig: NextConfig = {
     };
 
     // Add support for TypeScript path aliases
-    if (!dev) {
-      const tsPaths = new (require('tsconfig-paths-webpack-plugin')({
+    if (!dev && config.resolve) {
+      const tsPaths = new TsconfigPathsPlugin({
         configFile: path.resolve(__dirname, 'tsconfig.json'),
-      }));
-      
-      if (config.resolve) {
-        config.resolve.plugins = [
-          ...(config.resolve.plugins || []),
-          tsPaths,
-        ];
-      }
+      });
+      config.resolve.plugins = [
+        ...(config.resolve.plugins || []),
+        tsPaths,
+      ];
     }
 
     return config;

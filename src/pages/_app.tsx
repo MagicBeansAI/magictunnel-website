@@ -53,6 +53,18 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, []);
 
+  // Handle theme changes from next-themes across tabs before any early return
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'theme' && (e.newValue === 'dark' || e.newValue === 'light')) {
+        setCurrentTheme(e.newValue);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
+
   // Prevent hydration mismatch
   if (!mounted) {
     return (
@@ -67,18 +79,6 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   const theme = currentTheme === 'dark' ? darkTheme : lightTheme;
-
-  // Handle theme changes from next-themes
-  useEffect(() => {
-    const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'theme' && (e.newValue === 'dark' || e.newValue === 'light')) {
-        setCurrentTheme(e.newValue);
-      }
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
-  }, []);
 
   return (
     <NextThemesProvider

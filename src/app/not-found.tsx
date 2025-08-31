@@ -12,7 +12,7 @@ export default function NotFound() {
           Page not found
         </h1>
         <p className="mb-8 text-lg text-muted-foreground">
-          Sorry, we couldn't find the page you're looking for.
+          Sorry, we couldn&#39;t find the page you&#39;re looking for.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button asChild>
