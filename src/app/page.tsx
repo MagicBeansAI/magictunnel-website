@@ -93,7 +93,7 @@ export default function Home() {
               Coming Soon
             </span>
             <p className="text-sm md:text-base">
-              MagicTunnel is launching soon! {/*Join our waitlist for early access and updates.*/}
+              MagicTunnel Cloud is coming soon! {/*Join our waitlist for early access and updates.*/}
             </p>
             {/*<a 
               href="#waitlist" 
