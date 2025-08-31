@@ -1,11 +1,9 @@
 import type { AppProps } from 'next/app';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { Inter } from 'next/font/google';
 import { useEffect, useState } from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles, Theme } from '@/styles/theme';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 // Extend the Window interface to include theme-related properties
 declare global {
@@ -91,7 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <StyledComponentsThemeProvider theme={theme}>
         <GlobalStyles />
-        <div className={`${inter.variable} font-sans`}>
+        <div className={`font-sans`}>
           <Component {...pageProps} />
         </div>
       </StyledComponentsThemeProvider>

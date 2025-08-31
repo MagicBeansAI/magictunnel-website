@@ -25,9 +25,11 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
             <AlertCircle className="h-5 w-5" />
             <AlertTitle>Something went wrong!</AlertTitle>
           </div>
-          <AlertDescription className="mt-2">
-            {error.message || 'An unexpected error occurred. Please try again.'}
-          </AlertDescription>
+          <div className="mt-2">
+            <AlertDescription>
+              {error.message || 'An unexpected error occurred. Please try again.'}
+            </AlertDescription>
+          </div>
           <div className="mt-4 flex justify-center">
             <Button
               variant="outline"

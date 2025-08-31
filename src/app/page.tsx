@@ -775,7 +775,7 @@ routing:
             transition={{ duration: 0.6 }}
             className="mx-auto max-w-3xl"
           >
-            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-white">
               Ready to transform make your organization AI ready?
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-600 dark:text-gray-300">

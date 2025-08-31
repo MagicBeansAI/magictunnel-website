@@ -1,16 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import "./animations.css";
 import { Providers } from './providers';
 
-// Initialize Inter font with variable support
-const inter = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-sans",
-  display: "swap",
-});
+// Using system font stack via Tailwind's font-sans
 
 export const metadata: Metadata = {
   title: {
@@ -86,18 +80,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html 
-      lang="en" 
-      suppressHydrationWarning
-      className={`${inter.variable} scroll-smooth`}
-    >
+    <html lang="en" suppressHydrationWarning className={`scroll-smooth`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+        {/* Removed Google Fonts links to support offline/CI builds */}
       </head>
       <body className="min-h-screen bg-background font-sans antialiased text-foreground">
         <Providers>
